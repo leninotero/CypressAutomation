@@ -1,0 +1,8 @@
+node_modules
+
+crypress/videos
+cypress/screenshots
+
+mochawesome-report
+index.json
+.DS_Store
