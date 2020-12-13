@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-12-13T04:00:26.785Z",
-    "end": "2020-12-13T04:00:47.292Z",
-    "duration": 20507,
+    "start": "2020-12-13T04:03:48.898Z",
+    "end": "2020-12-13T04:04:05.446Z",
+    "duration": 16548,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "6067f32f-5080-4934-bf6f-a0908c9c55d0",
+      "uuid": "123c63b2-f3ba-4406-875f-079586852906",
       "title": "",
       "fullFile": "cypress/integration/purchase.spec.js",
       "file": "cypress/integration/purchase.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d478428d-979c-46d7-baf9-27477bd4aea7",
+          "uuid": "ccea6848-27b6-46ea-9f24-a94fcf54e6ab",
           "title": "Scenario 01 :: Purchase Order",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Perform a purchase order of a product",
               "fullTitle": "Scenario 01 :: Purchase Order Perform a purchase order of a product",
               "timedOut": null,
-              "duration": 20417,
+              "duration": 16499,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "//set cookie para ingresar logado\ncy.backgroundLogin();\ncy.visit('/');\ncy.contains(productName).trigger('mouseover');\ncy.contains(productName).parent().siblings('div.button-container').children('a').first().click(); //validando se o produto foi add no carrinho com sucesso\ncy.get('.icon-ok').parent().should('contain.text', 'Product successfully added to your shopping cart');\ncy.get('span#layer_cart_product_title').should('contain.text', productName);\ncy.get(\".button-container a[href$='controller=order']\").click();\ncy.get(\".cart_navigation a[href$='order&step=1']\").click(); // cy.get('#email').type('semana-agilizei@mail.com');\n// cy.get('#passwd').type('12345');\n// cy.get('button#SubmitLogin').click();  \n//validando se o endereço de entrega é igual ao de cobrança        \ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'checked', 'checked');\ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'name', 'same');\ncy.get('button[name=processAddress]').click();\ncy.get('[type=checkbox]#cgv').check();\ncy.get('button[name=processCarrier]').click();\ncy.get('.bankwire').click();\ncy.get(' .cart_navigation button[type=submit]').find('span').contains('I confirm my order').click();\ncy.get('.cheque-indent strong').should('contain.text', 'Your order on My Store is complete.');\ncy.get('div.box').invoke('text').then(function (text) {\n  //criação e escrita de arquivo\n  cy.writeFile('cypress/fixtures/order.json', {\n    id: \"\".concat(text.match(/[A-Z][A-Z]+/g)[1])\n  }); // Params: caminho do arquivo | conteudo do arquivo\n});\ncy.get(\".cart_navigation a[href$='history']\").click(); //leitura de arquivo\ncy.readFile('cypress/fixtures/order.json').then(function (order) {\n  cy.get('tr.first_item .history_link a').should('contain.text', order.id);\n});",
               "err": {},
-              "uuid": "be7dc3aa-76cb-41c3-a129-c412abe35d3b",
-              "parentUUID": "d478428d-979c-46d7-baf9-27477bd4aea7",
+              "uuid": "73e77cd6-a0a7-4864-93bb-cd010db5fa43",
+              "parentUUID": "ccea6848-27b6-46ea-9f24-a94fcf54e6ab",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "be7dc3aa-76cb-41c3-a129-c412abe35d3b"
+            "73e77cd6-a0a7-4864-93bb-cd010db5fa43"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 20417,
+          "duration": 16499,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
